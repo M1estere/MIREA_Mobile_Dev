@@ -5,6 +5,24 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="buttonclicker">
+        <State />
+      </entry>
+      <entry key="constraintlayout">
+        <State />
+      </entry>
+      <entry key="controllesson1">
+        <State />
+      </entry>
+      <entry key="layouttype">
+        <State />
+      </entry>
+      <entry key="linearlayout">
+        <State />
+      </entry>
+      <entry key="tablelayout">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
