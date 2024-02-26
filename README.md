@@ -8,7 +8,7 @@
 Название            | Статус | Ссылка
 --------------------|--------|--------
 Практика 1 (layouts + onClick)          |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/First_Practice">Перейти</a>
-Практика 2            |   🔴  |
+Практика 2 (toast, snackbar, dialogs, etc)          |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson2">Перейти</a>
 Практика 3            |   🔴  |
 Практика 4            |   🔴  |
 Практика 5            |   🔴  |
