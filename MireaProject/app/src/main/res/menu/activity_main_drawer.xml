@@ -13,5 +13,10 @@
             android:id="@+id/webView"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Web View" />
+
+        <item
+            android:id="@+id/worker"
+            android:icon="@drawable/coding"
+            android:title="Worker" />
     </group>
 </menu>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000422">
+
+    <RelativeLayout
+        android:id="@+id/up_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/song_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="SONG"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp">
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cover"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/up_region"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:id="@+id/big_track_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/up_region"
+            android:adjustViewBounds="true"
+            android:src="@drawable/oneokrock"
+            android:scaleType="centerInside"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--Song Info-->
+    <LinearLayout
+        android:id="@+id/song_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cover"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:letterSpacing=".05"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Save Yourself"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/song_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:letterSpacing=".1"
+            android:text="One Ok Rock"
+            android:textColor="#808080"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/times_region"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/current_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="00:01"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/whole_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="04:12"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/control_buttons_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/spec_buttons_region"
+        android:layout_below="@id/times_region"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:minHeight="75dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/previous_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/previous" />
+
+        <ProgressBar
+            android:id="@+id/pause_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:padding="10dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/pause_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/pause"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/next" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/spec_buttons_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:minHeight="50dp"
+        app:cardCornerRadius="70dp">
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

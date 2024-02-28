@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/data">
+    app:startDestination="@+id/worker">
 
     <fragment
         android:id="@+id/data"
@@ -16,5 +16,11 @@
         android:name="com.mirea.solovyevia.mireaproject.WebViewFragment"
         android:label="Web View"
         tools:layout="@layout/fragment_web_view" />
+
+    <fragment
+        android:id="@+id/worker"
+        android:name="com.mirea.solovyevia.mireaproject.WorkerFragment"
+        android:label="Worker"
+        tools:layout="@layout/fragment_worker" />
 
 </navigation>
