@@ -18,5 +18,21 @@
             android:id="@+id/worker"
             android:icon="@drawable/coding"
             android:title="Worker" />
+
+        <item
+            android:id="@+id/compass"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Compass" />
+
+        <item
+            android:id="@+id/note"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Note" />
+
+        <item
+            android:id="@+id/microphone"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Microphone" />
+
     </group>
 </menu>

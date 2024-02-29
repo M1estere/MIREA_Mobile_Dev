@@ -12,14 +12,10 @@ import java.util.concurrent.TimeUnit;
 public class LoadWorker extends Worker {
     private static final String TAG = "LoadWorker";
 
-
-
     public LoadWorker(
             @NonNull Context context,
             @NonNull WorkerParameters params) {
         super(context, params);
-
-
     }
 
     @Override

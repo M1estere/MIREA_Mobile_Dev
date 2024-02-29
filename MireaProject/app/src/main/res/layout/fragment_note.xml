@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NoteFragment"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topBanner"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="180dp">
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_below="@id/topBanner"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:gravity="bottom"
+        android:hint="Enter a title for the note"
+        android:text="Write everything ecstatic cover"
+        android:ellipsize="end"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="70dp"/>
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:hint="Enter a content for the note"
+        android:text="People can be clever as high as the sky, but as long as they don't show it, they will be lost in society and in history. "
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:gravity="bottom"
+        android:layout_marginEnd="70dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageCard"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_below="@id/content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="35dp"
+        android:backgroundTint="@color/bagr">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="Tap to choose image"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/noteImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
