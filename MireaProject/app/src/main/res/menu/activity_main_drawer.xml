@@ -34,5 +34,15 @@
             android:icon="@drawable/side_nav_bar"
             android:title="Microphone" />
 
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/filesWork"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Files Work" />
+
     </group>
 </menu>

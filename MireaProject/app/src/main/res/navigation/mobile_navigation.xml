@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/data">
+    app:startDestination="@+id/filesWork">
 
     <fragment
         android:id="@+id/data"
@@ -40,5 +40,17 @@
         android:name="com.mirea.solovyevia.mireaproject.MicrophoneFragment"
         android:label="Microphone"
         tools:layout="@layout/fragment_microphone" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.mirea.solovyevia.mireaproject.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/filesWork"
+        android:name="com.mirea.solovyevia.mireaproject.FilesWorkFragment"
+        android:label="Files work"
+        tools:layout="@layout/fragment_files_work" />
 
 </navigation>
