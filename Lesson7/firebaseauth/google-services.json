@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717523235836",
+    "project_id": "mirea-practice",
+    "storage_bucket": "mirea-practice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717523235836:android:6145eb69d78300c47cb879",
+        "android_client_info": {
+          "package_name": "com.mirea.solovyevia.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxJdRG6tUchPVv_3Vr8j1xOvNu-8IJhlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

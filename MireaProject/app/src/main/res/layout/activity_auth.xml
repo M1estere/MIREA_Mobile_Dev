@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AUTHENTICATE"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:letterSpacing=".1"/>
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your email..."/>
+
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your password..."
+                android:inputType="textPassword"/>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/signInButton"
+                    android:layout_weight="1"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="Sign In"/>
+
+                <Button
+                    android:id="@+id/signUpButton"
+                    android:layout_weight="1"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Sign Up"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

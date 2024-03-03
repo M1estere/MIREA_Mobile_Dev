@@ -44,5 +44,10 @@
             android:icon="@drawable/side_nav_bar"
             android:title="Files Work" />
 
+        <item
+            android:id="@+id/http"
+            android:icon="@drawable/side_nav_bar"
+            android:title="HTTP Request" />
+
     </group>
 </menu>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/filesWork">
+    app:startDestination="@+id/http">
 
     <fragment
         android:id="@+id/data"
@@ -52,5 +52,11 @@
         android:name="com.mirea.solovyevia.mireaproject.FilesWorkFragment"
         android:label="Files work"
         tools:layout="@layout/fragment_files_work" />
+
+    <fragment
+        android:id="@+id/http"
+        android:name="com.mirea.solovyevia.mireaproject.HttpFragment"
+        android:label="Http Request"
+        tools:layout="@layout/fragment_http" />
 
 </navigation>
