@@ -13,7 +13,7 @@
 Практика 4 (thread, looper, worker)           |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson4">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
 Практика 5 (sensors, camera, recorder)          |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson5">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
 Практика 6 (shared prefs, sqlite, storage)          |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson6">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
-Практика 7            |   🔴  |
+Практика 7 (http, firebase)           |   🟡  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson7">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
 Практика 8            |   🔴  |
 
 **Статусы выполнения:** <br>
