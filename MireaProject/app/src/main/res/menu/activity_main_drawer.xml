@@ -49,5 +49,10 @@
             android:icon="@drawable/side_nav_bar"
             android:title="HTTP Request" />
 
+        <item
+            android:id="@+id/facilities"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Facilities" />
+
     </group>
 </menu>
