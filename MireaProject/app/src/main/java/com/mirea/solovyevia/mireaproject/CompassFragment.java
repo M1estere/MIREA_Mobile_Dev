@@ -86,10 +86,10 @@ public class CompassFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        int degree = Math.round(sensorEvent.values[0]);
+        float degree = sensorEvent.values[0];
         degreesText.setText("Degree: " + degree);
 
-        compassImage.setRotation(-degree);
+        compassImage.setRotation(-degree * 90);
     }
 
     @Override

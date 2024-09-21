@@ -79,11 +79,6 @@ public class FilesWorkFragment extends Fragment {
 
     private FloatingActionButton floatingButton;
 
-    private static String ALGORITHM = "Blowfish";
-    private static String MODE = "Blowfish/CBC/PKCS5Padding";
-    private static String KEY = "password";
-    private static String IV = "abcdefgh";
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
