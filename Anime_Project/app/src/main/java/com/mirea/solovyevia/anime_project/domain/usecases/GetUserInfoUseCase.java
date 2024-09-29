@@ -3,11 +3,11 @@ package com.mirea.solovyevia.anime_project.domain.usecases;
 import com.mirea.solovyevia.anime_project.domain.models.User;
 import com.mirea.solovyevia.anime_project.domain.repository.UsersRepository;
 
-public class getUserInfoUseCase {
+public class GetUserInfoUseCase {
 
     private UsersRepository usersRepository;
 
-    public getUserInfoUseCase(UsersRepository usersRepository) {
+    public GetUserInfoUseCase(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
 
