@@ -1,12 +1,16 @@
 package com.mirea.solovyevia.anime_project.data.repository;
 
+import com.mirea.solovyevia.anime_project.domain.repository.AnimeRepository;
 import com.mirea.solovyevia.anime_project.domain.models.Anime;
-import com.mirea.solovyevia.anime_project.domain.models.Genre;
 import com.mirea.solovyevia.anime_project.domain.models.User;
 
-public class AnimeRepository {
+public class AnimeRepositoryImpl implements AnimeRepository {
 
-    protected User currentUser;
+    private User currentUser;
+
+    public AnimeRepositoryImpl(User user) {
+        currentUser = user;
+    }
 
     public Anime[] getAll() {
         return new Anime[] { Anime.getTestAnime() };

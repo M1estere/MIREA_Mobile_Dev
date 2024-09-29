@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.mirea.solovyevia.anime_project.data.AnimeRepositoryImpl;
-import com.mirea.solovyevia.anime_project.data.UsersRepositoryImpl;
-import com.mirea.solovyevia.anime_project.data.repository.AnimeRepository;
-import com.mirea.solovyevia.anime_project.data.repository.UsersRepository;
+import com.mirea.solovyevia.anime_project.data.repository.AnimeRepositoryImpl;
+import com.mirea.solovyevia.anime_project.data.repository.UsersRepositoryImpl;
 import com.mirea.solovyevia.anime_project.domain.models.User;
+import com.mirea.solovyevia.anime_project.domain.repository.AnimeRepository;
+import com.mirea.solovyevia.anime_project.domain.repository.UsersRepository;
 import com.mirea.solovyevia.anime_project.domain.usecases.GetAllAnimeUseCase;
 import com.mirea.solovyevia.anime_project.domain.usecases.SignInUseCase;
 

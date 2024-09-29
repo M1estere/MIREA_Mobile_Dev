@@ -1,10 +1,15 @@
 package com.mirea.solovyevia.anime_project.data.repository;
 
 import com.mirea.solovyevia.anime_project.domain.models.User;
+import com.mirea.solovyevia.anime_project.domain.repository.UsersRepository;
 
-public class UsersRepository {
+public class UsersRepositoryImpl implements UsersRepository {
 
-    protected User currentUser;
+    private User currentUser;
+
+    public UsersRepositoryImpl(User user) {
+        currentUser = user;
+    }
 
     public boolean signIn(String email, String password) {
         // авторизация в приложении

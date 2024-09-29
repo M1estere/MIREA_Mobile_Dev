@@ -1,7 +1,7 @@
 package com.mirea.solovyevia.anime_project.domain.usecases;
 
-import com.mirea.solovyevia.anime_project.data.repository.AnimeRepository;
 import com.mirea.solovyevia.anime_project.domain.models.Anime;
+import com.mirea.solovyevia.anime_project.domain.repository.AnimeRepository;
 
 public class AddAnimeToFavouritesUseCase {
 

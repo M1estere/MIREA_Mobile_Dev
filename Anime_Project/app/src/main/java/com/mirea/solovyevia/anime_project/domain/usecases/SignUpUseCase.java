@@ -1,6 +1,6 @@
 package com.mirea.solovyevia.anime_project.domain.usecases;
 
-import com.mirea.solovyevia.anime_project.data.repository.UsersRepository;
+import com.mirea.solovyevia.anime_project.domain.repository.UsersRepository;
 
 public class SignUpUseCase {
 
