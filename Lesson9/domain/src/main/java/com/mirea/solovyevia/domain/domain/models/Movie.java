@@ -1,4 +1,4 @@
-package com.mirea.solovyevia.movieproject.domain.models;
+package com.mirea.solovyevia.domain.domain.models;
 
 public class Movie {
     private int id;

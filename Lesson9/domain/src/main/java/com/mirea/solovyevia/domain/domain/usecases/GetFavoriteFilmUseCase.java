@@ -1,9 +1,8 @@
-package com.mirea.solovyevia.movieproject.domain.usecases;
+package com.mirea.solovyevia.domain.domain.usecases;
 
-import android.content.Context;
 
-import com.mirea.solovyevia.movieproject.domain.models.Movie;
-import com.mirea.solovyevia.movieproject.domain.repository.MovieRepository;
+import com.mirea.solovyevia.domain.domain.repository.MovieRepository;
+import com.mirea.solovyevia.domain.domain.models.Movie;
 
 public class GetFavoriteFilmUseCase {
     private MovieRepository movieRepository;

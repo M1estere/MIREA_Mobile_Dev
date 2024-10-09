@@ -1,4 +1,4 @@
-package com.mirea.solovyevia.movieproject;
+package com.mirea.solovyevia.movieproject.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.mirea.solovyevia.movieproject.data.MovieRepositoryImpl;
-import com.mirea.solovyevia.movieproject.domain.repository.MovieRepository;
-import com.mirea.solovyevia.movieproject.domain.usecases.GetFavoriteFilmUseCase;
-import com.mirea.solovyevia.movieproject.domain.models.Movie;
-import com.mirea.solovyevia.movieproject.domain.usecases.SaveMovieToFavoriteUseCase;
+import com.mirea.solovyevia.data.data.MovieRepositoryImpl;
+import com.mirea.solovyevia.data.data.storage.MovieStorage;
+import com.mirea.solovyevia.data.data.storage.sharedprefs.SharedPrefMovieStorage;
+import com.mirea.solovyevia.domain.domain.repository.MovieRepository;
+import com.mirea.solovyevia.movieproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
         EditText text = findViewById(R.id.edit_field);
         TextView textView = findViewById(R.id.fav_film_text);
 
-        MovieRepository movieRepository = new MovieRepositoryImpl(getApplicationContext());
+        MovieStorage sharedPrefMovieStorage = new SharedPrefMovieStorage(this);
+        MovieRepository movieRepository = new MovieRepositoryImpl(sharedPrefMovieStorage);
         findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
                   Boolean result = new
-                          SaveMovieToFavoriteUseCase(movieRepository).execute(new Movie(2,
+                          com.mirea.solovyevia.domain.domain.usecases.SaveMovieToFavoriteUseCase(movieRepository).execute(new com.mirea.solovyevia.domain.domain.models.Movie(2,
                           text.getText().toString()));
                   textView.setText(String.format("Save result %s", result));
               }
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.show_button).setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Movie moview = new GetFavoriteFilmUseCase(movieRepository).execute();
+                 com.mirea.solovyevia.domain.domain.models.Movie moview = new com.mirea.solovyevia.domain.domain.usecases.GetFavoriteFilmUseCase(movieRepository).execute();
                  textView.setText(String.format("Save result %s", moview.getName()));
              }
         });
