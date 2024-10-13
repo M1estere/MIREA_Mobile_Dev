@@ -16,7 +16,7 @@
 Практика 7 (http, firebase)           |   🟢  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson7">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
 Практика 8 (yandex marp, osm)           |   🟢  | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson8">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/MireaProject">Контрольное</a>
 Практика 9 | 🟡 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson9">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project">Anime Project</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project/README.md">Диаграммы</a>
-Практика 10 | 🔴 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson9">Практика</a>
+Практика 10 | 🔴 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson10">Практика</a>
 
 **Статусы выполнения:** <br>
 🔴 Не готово <br>
