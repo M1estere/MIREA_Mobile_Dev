@@ -1,4 +1,4 @@
-#Sun Oct 13 21:24:43 MSK 2024
+#Sun Oct 13 21:33:13 MSK 2024
 base.0=D\:\\AndroidProjects\\Java\\MIREA\\Lesson10\\movieproject\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\AndroidProjects\\Java\\MIREA\\Lesson10\\movieproject\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\10\\classes.dex
 base.2=D\:\\AndroidProjects\\Java\\MIREA\\Lesson10\\movieproject\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\15\\classes.dex
