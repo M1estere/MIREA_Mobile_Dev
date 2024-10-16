@@ -1,4 +1,4 @@
-package com.mirea.solovyevia.domain.usecases;
+package com.mirea.solovyevia.domain.usecases.auth;
 
 import com.mirea.solovyevia.domain.repository.AuthRepository;
 

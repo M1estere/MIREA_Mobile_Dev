@@ -1,8 +1,7 @@
-package com.mirea.solovyevia.domain.usecases;
+package com.mirea.solovyevia.domain.usecases.auth;
 
 import com.mirea.solovyevia.domain.AuthorizationCallback;
 import com.mirea.solovyevia.domain.repository.AuthRepository;
-import com.mirea.solovyevia.domain.repository.UsersRepository;
 
 public class SignInUseCase {
 

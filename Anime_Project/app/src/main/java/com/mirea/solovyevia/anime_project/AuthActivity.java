@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,9 +15,9 @@ import com.mirea.solovyevia.data.firebase.AuthController;
 import com.mirea.solovyevia.data.firebase.FirebaseAuthController;
 import com.mirea.solovyevia.data.repository.AuthRepositoryImpl;
 import com.mirea.solovyevia.domain.AuthorizationCallback;
-import com.mirea.solovyevia.domain.usecases.HasUserLoggedUseCase;
-import com.mirea.solovyevia.domain.usecases.SignInUseCase;
-import com.mirea.solovyevia.domain.usecases.SignUpUseCase;
+import com.mirea.solovyevia.domain.usecases.auth.HasUserLoggedUseCase;
+import com.mirea.solovyevia.domain.usecases.auth.SignInUseCase;
+import com.mirea.solovyevia.domain.usecases.auth.SignUpUseCase;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -30,7 +29,6 @@ public class AuthActivity extends AppCompatActivity {
     private SignInUseCase signInUseCase;
     private SignUpUseCase signUpUseCase;
     private HasUserLoggedUseCase hasUserLoggedUseCase;
-
 
     private RelativeLayout loginForm;
     private EditText loginEmailEditText;
