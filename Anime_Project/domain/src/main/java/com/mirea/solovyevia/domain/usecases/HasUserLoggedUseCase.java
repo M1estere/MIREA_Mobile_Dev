@@ -2,16 +2,16 @@ package com.mirea.solovyevia.domain.usecases;
 
 import com.mirea.solovyevia.domain.repository.AuthRepository;
 
-public class LogOutUseCase {
+public class HasUserLoggedUseCase {
 
     private AuthRepository authRepository;
 
-    public LogOutUseCase(AuthRepository authRepository) {
+    public HasUserLoggedUseCase(AuthRepository authRepository) {
         this.authRepository = authRepository;
     }
 
-    public void execute() {
-        authRepository.signOut();
+    public boolean execute() {
+        return authRepository.hasUserLogged();
     }
 
 }

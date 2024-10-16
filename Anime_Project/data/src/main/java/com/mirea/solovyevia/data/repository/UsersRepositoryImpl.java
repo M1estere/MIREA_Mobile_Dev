@@ -1,14 +1,15 @@
 package com.mirea.solovyevia.data.repository;
 
+import com.mirea.solovyevia.data.storage.UsersStorage;
 import com.mirea.solovyevia.domain.models.User;
 import com.mirea.solovyevia.domain.repository.UsersRepository;
 
 public class UsersRepositoryImpl implements UsersRepository {
 
-    private User currentUser;
+    private UsersStorage usersStorage;
 
-    public UsersRepositoryImpl(User user) {
-        currentUser = user;
+    public UsersRepositoryImpl(UsersStorage usersStorage) {
+        this.usersStorage = usersStorage;
     }
 
 

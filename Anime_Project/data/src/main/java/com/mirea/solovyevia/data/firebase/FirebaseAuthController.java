@@ -13,24 +13,28 @@ public class FirebaseAuthController implements AuthController {
     }
 
     @Override
-    public void signIn(String email, String password) {
+    public void signIn(String email, String password, AuthorizationCallback authCallback) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
                     Log.d("MAIN_DEBUG", "Logged In");
+                    authCallback.onSuccess();
                 })
                 .addOnFailureListener(e -> {
                     Log.d("MAIN_DEBUG", "Failed when logging in");
+                    authCallback.onFailure();
                 });
     }
 
     @Override
-    public void signUp(String username, String email, String password) {
+    public void signUp(String username, String email, String password, AuthorizationCallback authCallback) {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
                     Log.d("MAIN_DEBUG", "Signed Up");
+                    authCallback.onSuccess();
                 })
                 .addOnFailureListener(e -> {
                     Log.d("MAIN_DEBUG", "Failed when signing in");
+                    authCallback.onFailure();
                 });
     }
 

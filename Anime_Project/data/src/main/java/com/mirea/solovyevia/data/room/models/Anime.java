@@ -1,27 +1,66 @@
 package com.mirea.solovyevia.data.room.models;
 
-import com.mirea.solovyevia.domain.models.Genre;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "anime")
 public class Anime {
 
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "series")
     private int seriesAmount;
-    private Genre[] genres;
 
-    public Anime(int id, String title, String description, int seriesAmount, com.mirea.solovyevia.domain.models.Genre[] genres) {
-        this.id = id;
+    @ColumnInfo(name = "genres")
+    private String genres;
 
-        this.title = title;
-        this.description = description;
-
-        this.seriesAmount = seriesAmount;
-        this.genres = genres;
+    public int getId() {
+        return id;
     }
 
-    public static com.mirea.solovyevia.domain.models.Anime getTestAnime() {
-        return new com.mirea.solovyevia.domain.models.Anime(1, "Test anime", "Test description", 12, new com.mirea.solovyevia.domain.models.Genre[]{ com.mirea.solovyevia.domain.models.Genre.Action, Genre.Shonen });
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getSeriesAmount() {
+        return seriesAmount;
+    }
+
+    public String getGenres() {
+        return genres;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setSeriesAmount(int seriesAmount) {
+        this.seriesAmount = seriesAmount;
+    }
+
+    public void setGenres(String genres) {
+        this.genres = genres;
     }
 
 }
