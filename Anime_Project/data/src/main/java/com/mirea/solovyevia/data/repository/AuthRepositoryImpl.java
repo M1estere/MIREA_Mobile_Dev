@@ -13,15 +13,13 @@ public class AuthRepositoryImpl implements AuthRepository {
     }
 
     @Override
-    public boolean signIn(String email, String password, AuthorizationCallback authCallback) {
+    public void signIn(String email, String password, AuthorizationCallback authCallback) {
         authController.signIn(email, password, new AuthorizationCallbackAdapter(authCallback));
-        return false;
     }
 
     @Override
-    public boolean register(String username, String email, String password, AuthorizationCallback authCallback) {
+    public void register(String username, String email, String password, AuthorizationCallback authCallback) {
         authController.signUp(username, email, password, new AuthorizationCallbackAdapter(authCallback));
-        return true;
     }
 
     @Override

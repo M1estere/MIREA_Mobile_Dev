@@ -11,8 +11,8 @@ public class SignInUseCase {
         this.authRepository = authRepository;
     }
 
-    public boolean execute(String email, String password, AuthorizationCallback authCallback) {
-        return authRepository.signIn(email, password, authCallback);
+    public void execute(String email, String password, AuthorizationCallback authCallback) {
+        authRepository.signIn(email, password, authCallback);
     }
 
 }

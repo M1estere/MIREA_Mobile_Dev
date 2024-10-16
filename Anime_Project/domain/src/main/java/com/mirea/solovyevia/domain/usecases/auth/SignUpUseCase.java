@@ -11,8 +11,8 @@ public class SignUpUseCase {
         this.authRepository = authRepository;
     }
 
-    public boolean execute(String name, String email, String password, AuthorizationCallback authCallback) {
-        return authRepository.register(name, email, password, authCallback);
+    public void execute(String name, String email, String password, AuthorizationCallback authCallback) {
+        authRepository.register(name, email, password, authCallback);
     }
 
 }
