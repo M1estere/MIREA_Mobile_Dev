@@ -25,8 +25,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SIGN IN"
+                android:text="@string/sign_in"
                 android:textColor="@color/white"
+                android:textAllCaps="true"
                 android:textSize="25sp"
                 android:textStyle="bold"/>
 
@@ -35,7 +36,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Enter email..."
+                android:hint="@string/enter_email"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -49,7 +50,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Enter password..."
+                android:hint="@string/enter_password"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -62,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="30dp"
-                android:text="Sign In"
+                android:text="@string/sign_in"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:letterSpacing=".1"
@@ -117,9 +118,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                android:textAllCaps="true"
                 android:textStyle="bold"/>
 
             <EditText
@@ -127,7 +129,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Enter your nickname..."
+                android:hint="@string/enter_your_nickname"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -140,7 +142,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Enter email..."
+                android:hint="@string/enter_email"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -154,7 +156,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Enter password..."
+                android:hint="@string/enter_password"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -168,7 +170,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Confirm password..."
+                android:hint="@string/confirm_password"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/rounded_edittext"
@@ -181,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="30dp"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:letterSpacing=".1"
@@ -210,7 +212,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:text="@string/sign_in"
                 android:textColor="@color/blue"
                 android:textStyle="bold"/>
 
