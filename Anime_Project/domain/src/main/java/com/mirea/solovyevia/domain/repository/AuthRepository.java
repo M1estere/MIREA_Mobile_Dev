@@ -2,6 +2,7 @@ package com.mirea.solovyevia.domain.repository;
 
 import com.mirea.solovyevia.domain.AuthorizationCallback;
 import com.mirea.solovyevia.domain.UserCallback;
+import com.mirea.solovyevia.domain.models.User;
 
 public interface AuthRepository {
 

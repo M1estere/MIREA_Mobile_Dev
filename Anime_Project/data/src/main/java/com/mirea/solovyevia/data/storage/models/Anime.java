@@ -1,4 +1,4 @@
-package com.mirea.solovyevia.domain.models;
+package com.mirea.solovyevia.data.storage.models;
 
 public class Anime {
 
@@ -73,10 +73,6 @@ public class Anime {
 
     public void setEpisodes(int episodes) {
         this.episodes = episodes;
-    }
-
-    public static Anime getTestAnime() {
-        return new Anime();
     }
 
 }

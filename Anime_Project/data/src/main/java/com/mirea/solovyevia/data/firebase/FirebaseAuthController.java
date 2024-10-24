@@ -2,6 +2,9 @@ package com.mirea.solovyevia.data.firebase;
 
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
+
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -62,7 +65,9 @@ public class FirebaseAuthController implements AuthController {
     }
 
     @Override
-    public void getUserInfo(String userId, UserCallback userCallback) {
+    public LiveData<User> getUserInfo(String userId, UserCallback userCallback) {
+        MediatorLiveData<User> userLiveData = new MediatorLiveData<>();
+
         DocumentReference userRef = firebaseFirestore.collection("users").document(userId);
         userRef.get().addOnCompleteListener(task -> {
             DocumentSnapshot document = task.getResult();
@@ -74,14 +79,20 @@ public class FirebaseAuthController implements AuthController {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
                 try {
                     Date registrationDate = dateFormat.parse(regDateString);
-                    userCallback.onSuccess(new User(userId, nickname, email, registrationDate));
+                    User user = new User(userId, nickname, email, registrationDate);
+                    userCallback.onSuccess(user);
+                    userLiveData.setValue(user);
                 } catch (Exception e) {
                     userCallback.onFailure(e);
+                    userLiveData.setValue(null);
                 }
             } else {
                 userCallback.onFailure(task.getException());
+                userLiveData.setValue(null);
             }
         });
+
+        return userLiveData;
     }
 
     @Override
