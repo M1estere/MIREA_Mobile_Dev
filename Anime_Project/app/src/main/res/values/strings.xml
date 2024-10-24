@@ -6,4 +6,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="enter_your_nickname">Enter your nickname...</string>
     <string name="confirm_password">Confirm password...</string>
+    <string name="favourites_title">Favourites</string>
+    <string name="friends_title">Friends</string>
+    <string name="something_went_wrong">Something went wrong</string>
 </resources>

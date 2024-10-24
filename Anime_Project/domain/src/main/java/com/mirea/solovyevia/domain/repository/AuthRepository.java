@@ -1,6 +1,7 @@
 package com.mirea.solovyevia.domain.repository;
 
 import com.mirea.solovyevia.domain.AuthorizationCallback;
+import com.mirea.solovyevia.domain.UserCallback;
 
 public interface AuthRepository {
 
@@ -9,5 +10,7 @@ public interface AuthRepository {
 
     public boolean hasUserLogged();
     public void signOut();
+    public void getUserInfo(String userId, UserCallback userCallback);
+    public String getActiveUserId();
 
 }

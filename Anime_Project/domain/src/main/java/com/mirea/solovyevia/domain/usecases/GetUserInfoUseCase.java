@@ -1,18 +1,18 @@
 package com.mirea.solovyevia.domain.usecases;
 
-import com.mirea.solovyevia.domain.models.User;
-import com.mirea.solovyevia.domain.repository.UsersRepository;
+import com.mirea.solovyevia.domain.UserCallback;
+import com.mirea.solovyevia.domain.repository.AuthRepository;
 
 public class GetUserInfoUseCase {
 
-    private UsersRepository usersRepository;
+    private AuthRepository authRepository;
 
-    public GetUserInfoUseCase(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
+    public GetUserInfoUseCase(AuthRepository authRepository) {
+        this.authRepository = authRepository;
     }
 
-    public User execute() {
-        return usersRepository.getUserInfo("test_username");
+    public void execute(String userId, UserCallback userCallback) {
+        authRepository.getUserInfo(userId, userCallback);
     }
 
 }

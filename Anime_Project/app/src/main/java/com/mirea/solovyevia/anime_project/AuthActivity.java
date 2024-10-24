@@ -1,6 +1,7 @@
 package com.mirea.solovyevia.anime_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mirea.solovyevia.anime_project.viewModels.AuthActivityViewModel;
+import com.mirea.solovyevia.anime_project.viewModels.AuthActivityViewModelFactory;
 import com.mirea.solovyevia.data.firebase.AuthController;
 import com.mirea.solovyevia.data.firebase.FirebaseAuthController;
 import com.mirea.solovyevia.data.repository.AuthRepositoryImpl;
@@ -26,10 +29,6 @@ public class AuthActivity extends AppCompatActivity {
         register,
     }
 
-    private SignInUseCase signInUseCase;
-    private SignUpUseCase signUpUseCase;
-    private HasUserLoggedUseCase hasUserLoggedUseCase;
-
     private RelativeLayout loginForm;
     private EditText loginEmailEditText;
     private EditText loginPasswordEditText;
@@ -44,23 +43,17 @@ public class AuthActivity extends AppCompatActivity {
     private Button regButton;
     private TextView openLogFormText;
 
+    private AuthActivityViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        setupUseCases();
+        viewModel = new ViewModelProvider(this, new AuthActivityViewModelFactory(this))
+                        .get(AuthActivityViewModel.class);
+
         setupViews();
-        checkAuthorized();
-    }
-
-    private void setupUseCases() {
-        AuthController authController = new FirebaseAuthController();
-        AuthRepositoryImpl authRepository = new AuthRepositoryImpl(authController);
-
-        signInUseCase = new SignInUseCase(authRepository);
-        signUpUseCase = new SignUpUseCase(authRepository);
-        hasUserLoggedUseCase = new HasUserLoggedUseCase(authRepository);
     }
 
     private void setupViews() {
@@ -100,17 +93,7 @@ public class AuthActivity extends AppCompatActivity {
                     return;
                 }
 
-                signInUseCase.execute(email, password, new AuthorizationCallback() {
-                    @Override
-                    public void onSuccess() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-
-                    @Override
-                    public void onFailure() {
-                        Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                viewModel.login(email, password);
             }
         });
 
@@ -132,25 +115,9 @@ public class AuthActivity extends AppCompatActivity {
                     return;
                 }
 
-                signUpUseCase.execute(nickname, email, password, new AuthorizationCallback() {
-                    @Override
-                    public void onSuccess() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-
-                    @Override
-                    public void onFailure() {
-                        Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                viewModel.register(nickname, email, password);
             }
         });
-    }
-
-    private void checkAuthorized() {
-        if (hasUserLoggedUseCase.execute()) {
-            startActivity(new Intent(this, MainActivity.class));
-        }
     }
 
     private void changeFormsVisibility(FormType formType) {

@@ -1,14 +1,17 @@
 package com.mirea.solovyevia.data.storage.models;
 
+import java.util.Date;
+
 public class User {
 
-    private int id;
+    private String id;
     private String userName;
 
     private String email;
-    private String password;
 
-    public int getId() {
+    private Date regDate;
+
+    public String getId() {
         return id;
     }
 
@@ -20,21 +23,17 @@ public class User {
         return email;
     }
 
-    public String getPassword() {
-        return password;
+    public Date getRegDate() {
+        return regDate;
     }
 
-    public User(int id, String userName, String email, String password) {
+    public User(String id, String userName, String email, String password, Date regDate) {
         this.id = id;
 
         this.userName = userName;
 
         this.email = email;
-        this.password = password;
-    }
-
-    public static User getTestUser() {
-        return new User(1, "test user", "test_email", "test_password");
+        this.regDate = regDate;
     }
 
 }
