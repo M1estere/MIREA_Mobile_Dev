@@ -10,8 +10,7 @@
     </td>
     <td>
       <p>Recycler View</p>
-      <img src="https://github.com/user-attachments/assets/817d094b-d212-4eda-b496-e594ebe03ef4" alt="Recycler View" />
+      <img src="https://github.com/user-attachments/assets/635050fb-bc5f-4414-badb-8ac0ad9e45c2" alt="Recycler View" />
     </td>
   </tr>
 </table>
-
