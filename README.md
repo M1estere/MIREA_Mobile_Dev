@@ -18,6 +18,7 @@
 Практика 9 | 🟢 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson9">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project">Anime Project</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project/README.md">Диаграммы</a>
 Практика 10 | 🟢 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson10">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project">Anime Project</a>
 Практика 11 | 🟡 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson11">Практика</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/blob/master/Lesson11/README.md">Вывод при повороте</a> <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Anime_Project">Anime Project</a>
+Практика 12 | 🔴 | <a href="https://github.com/M1estere/MIREA_Mobile_Dev/tree/master/Lesson12">Практика</a>
 
 **Статусы выполнения:** <br>
 🔴 Не готово <br>
