@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         topAnimeList.clear();
         topAnimeList.addAll(animeList);
         topAnimeRecyclerAdapter.notifyDataSetChanged();
-
-        System.out.println("Updated");
-        System.out.println(animeList.get(0).getTitle());
     }
 
 }

@@ -28,9 +28,7 @@ public class RemoteDataSource {
         animeApi = retrofit.create(AnimeApi.class);
     }
 
-    public List<Anime> getTopAnime(ApiCallback<List<Anime>> apiCallback) {
-        List<Anime> animeList = new ArrayList<>();
-
+    public void getTopAnime(ApiCallback<List<Anime>> apiCallback) {
         animeApi.getTopAnime().enqueue(new Callback<AnimeResponse>() {
             @Override
             public void onResponse(@NonNull Call<AnimeResponse> call, @NonNull retrofit2.Response<AnimeResponse> response) {
@@ -46,7 +44,6 @@ public class RemoteDataSource {
                 apiCallback.onFailure((Exception) t);
             }
         });
-
-        return animeList;
     }
+
 }

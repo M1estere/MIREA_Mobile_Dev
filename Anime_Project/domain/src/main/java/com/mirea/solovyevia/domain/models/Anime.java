@@ -50,6 +50,10 @@ public class Anime {
         return images;
     }
 
+    public String getImageUrl() {
+        return getImages().get("jpg").get("image_url");
+    }
+
     public void setImages(Map<String, Map<String, String>> images) {
         this.images = images;
     }

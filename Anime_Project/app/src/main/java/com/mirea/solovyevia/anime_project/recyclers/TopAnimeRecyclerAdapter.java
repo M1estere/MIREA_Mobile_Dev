@@ -39,10 +39,9 @@ public class TopAnimeRecyclerAdapter extends RecyclerView.Adapter<TopAnimeViewHo
         Anime anime = animeList.get(position);
 
         Glide.with(context)
-                .load(anime.getImages().get("jpg").get("image_url"))
+                .load(anime.getImageUrl())
                 .into(holder.getImageView());
         holder.getTextView().setText(anime.getTitle());
-        System.out.println(anime.getImages().get("jpg").get("image_url"));
     }
 
     @Override
