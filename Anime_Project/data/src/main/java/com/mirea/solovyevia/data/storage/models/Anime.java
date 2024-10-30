@@ -1,12 +1,15 @@
 package com.mirea.solovyevia.data.storage.models;
 
+import java.util.List;
+import java.util.Map;
+
 public class Anime {
 
     private int malId;
     private String title;
     private String titleEnglish;
     private String titleJapanese;
-    private String imageUrl;
+    private Map<String, Map<String, String>> images;
     private String synopsis;
     private double score;
     private int episodes;
@@ -43,12 +46,12 @@ public class Anime {
         this.titleJapanese = titleJapanese;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public Map<String, Map<String, String>> getImages() {
+        return images;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImages(Map<String, Map<String, String>> images) {
+        this.images = images;
     }
 
     public String getSynopsis() {

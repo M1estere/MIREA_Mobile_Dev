@@ -23,7 +23,7 @@ public class MainActivityViewModel extends ViewModel {
     private RemoteDataSource remoteDataSource;
 
     private MutableLiveData<List<Anime>> topAnime = new MutableLiveData<>();
-    private MediatorLiveData<String> animeLiveData = new MediatorLiveData<>();
+    private MediatorLiveData<List<Anime>> animeLiveData = new MediatorLiveData<>();
 
     private final Context context;
 
@@ -36,17 +36,12 @@ public class MainActivityViewModel extends ViewModel {
         getTopAnimeUseCase = new GetTopAnimeUseCase(animeRepository);
 
         animeLiveData.addSource(topAnime, topAnime -> {
-            getStringAnime(topAnime);
+            getAnimeLiveDataTop(topAnime);
         });
     }
 
-    private void getStringAnime(List<Anime> anime) {
-        StringBuilder result = new StringBuilder();
-        for (Anime animeItem : anime) {
-            result.append(animeItem.getTitle()).append(" ");
-        }
-
-        animeLiveData.setValue(result.toString());
+    private void getAnimeLiveDataTop(List<Anime> anime) {
+        animeLiveData.setValue(anime);
     }
 
     public void getTopAnime() {
@@ -63,7 +58,7 @@ public class MainActivityViewModel extends ViewModel {
         });
     }
 
-    public MediatorLiveData<String> getAnimeLiveData() {
+    public MediatorLiveData<List<Anime>> getAnimeLiveData() {
         return animeLiveData;
     }
 
