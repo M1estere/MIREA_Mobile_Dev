@@ -62,22 +62,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         setupInfo();
-
-        // TODO: убрать это отсюда, сейчас для теста
-        RemoteDataSource remoteDataSource = new RemoteDataSource();
-        AnimeRepositoryImpl animeRepository = new AnimeRepositoryImpl(remoteDataSource);
-        animeRepository.getTopAnime().observe(this, new Observer<List<Anime>>() {
-            @Override
-            public void onChanged(List<Anime> animeList) {
-                if (animeList != null) {
-                    for (Anime anime : animeList) {
-                        System.out.printf("Title: %s, %dep.%n", anime.getTitle(), anime.getEpisodes());
-                    }
-                } else {
-                    System.out.println("Error");
-                }
-            }
-        });
     }
 
     private void setupInfo() {

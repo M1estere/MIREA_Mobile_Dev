@@ -75,7 +75,7 @@ public class AuthActivityViewModel extends ViewModel {
     }
 
     private void changeActivity() {
-        context.startActivity(new Intent(context, ProfileActivity.class));
+        context.startActivity(new Intent(context, MainActivity.class));
     }
 
 }

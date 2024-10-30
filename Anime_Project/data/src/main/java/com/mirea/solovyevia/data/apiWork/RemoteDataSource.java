@@ -1,10 +1,13 @@
 package com.mirea.solovyevia.data.apiWork;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.mirea.solovyevia.domain.ApiCallback;
 import com.mirea.solovyevia.domain.models.Anime;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,25 +28,25 @@ public class RemoteDataSource {
         animeApi = retrofit.create(AnimeApi.class);
     }
 
-    public LiveData<List<Anime>> getTopAnime() {
-        MutableLiveData<List<Anime>> animeListLiveData = new MutableLiveData<>();
+    public List<Anime> getTopAnime(ApiCallback<List<Anime>> apiCallback) {
+        List<Anime> animeList = new ArrayList<>();
 
         animeApi.getTopAnime().enqueue(new Callback<AnimeResponse>() {
             @Override
-            public void onResponse(Call<AnimeResponse> call, retrofit2.Response<AnimeResponse> response) {
+            public void onResponse(@NonNull Call<AnimeResponse> call, @NonNull retrofit2.Response<AnimeResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    animeListLiveData.setValue(response.body().getData());
+                    apiCallback.onSuccess(response.body().getData());
                 } else {
-                    animeListLiveData.setValue(null);
+                    apiCallback.onFailure(new Exception("Something went wrong"));
                 }
             }
 
             @Override
-            public void onFailure(Call<AnimeResponse> call, Throwable t) {
-                animeListLiveData.setValue(null);
+            public void onFailure(@NonNull Call<AnimeResponse> call, @NonNull Throwable t) {
+                apiCallback.onFailure((Exception) t);
             }
         });
 
-        return animeListLiveData;
+        return animeList;
     }
 }

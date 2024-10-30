@@ -1,9 +1,7 @@
 package com.mirea.solovyevia.data.repository;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MediatorLiveData;
-
 import com.mirea.solovyevia.data.apiWork.RemoteDataSource;
+import com.mirea.solovyevia.domain.ApiCallback;
 import com.mirea.solovyevia.domain.models.Anime;
 import com.mirea.solovyevia.domain.models.User;
 import com.mirea.solovyevia.domain.repository.AnimeRepository;
@@ -43,15 +41,9 @@ public class AnimeRepositoryImpl implements AnimeRepository {
         return Anime.getTestAnime();
     }
 
-    public LiveData<List<Anime>> getTopAnime() {
-        MediatorLiveData<List<Anime>> result = new MediatorLiveData<>();
-
-        LiveData<List<Anime>> remoteData = remoteDataSource.getTopAnime();
-        result.addSource(remoteData, animeList -> {
-            result.setValue(animeList);
-        });
-
-        return result;
+    @Override
+    public void getTopAnime(ApiCallback<List<Anime>> apiCallback) {
+        remoteDataSource.getTopAnime(apiCallback);
     }
 
 }
