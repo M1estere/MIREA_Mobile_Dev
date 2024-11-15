@@ -18,6 +18,8 @@ import com.mirea.solovyevia.domain.domain.models.Movie;
 import com.mirea.solovyevia.domain.domain.repository.MovieRepository;
 import com.mirea.solovyevia.movieproject.R;
 
+import java.util.Observer;
+
 public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
