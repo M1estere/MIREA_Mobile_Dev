@@ -6,18 +6,18 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-public class MainActivityViewModelFactory implements ViewModelProvider.Factory {
+public class AnimeListsFragmentViewModelFactory implements ViewModelProvider.Factory {
 
     private final Context context;
 
-    public MainActivityViewModelFactory(Context context) {
+    public AnimeListsFragmentViewModelFactory(Context context) {
         this.context = context;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new MainActivityViewModel(context);
+        return (T) new AnimeListsFragmentViewModel(context);
     }
 
 }

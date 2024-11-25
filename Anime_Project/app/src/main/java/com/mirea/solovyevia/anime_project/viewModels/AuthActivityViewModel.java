@@ -7,7 +7,6 @@ import android.widget.Toast;
 import androidx.lifecycle.ViewModel;
 
 import com.mirea.solovyevia.anime_project.MainActivity;
-import com.mirea.solovyevia.anime_project.ProfileActivity;
 import com.mirea.solovyevia.data.firebase.AuthController;
 import com.mirea.solovyevia.data.firebase.FirebaseAuthController;
 import com.mirea.solovyevia.data.repository.AuthRepositoryImpl;

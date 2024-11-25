@@ -5,7 +5,6 @@ import android.widget.Toast;
 
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 import com.mirea.solovyevia.data.apiWork.RemoteDataSource;
@@ -16,7 +15,7 @@ import com.mirea.solovyevia.domain.usecases.anime.GetTopAnimeUseCase;
 
 import java.util.List;
 
-public class MainActivityViewModel extends ViewModel {
+public class AnimeListsFragmentViewModel extends ViewModel {
 
     private GetTopAnimeUseCase getTopAnimeUseCase;
 
@@ -27,7 +26,7 @@ public class MainActivityViewModel extends ViewModel {
 
     private final Context context;
 
-    public MainActivityViewModel(Context context) {
+    public AnimeListsFragmentViewModel(Context context) {
         this.context = context;
 
         remoteDataSource = new RemoteDataSource();
@@ -49,6 +48,7 @@ public class MainActivityViewModel extends ViewModel {
             @Override
             public void onSuccess(List<Anime> result) {
                 topAnime.setValue(result);
+                System.out.println("Request");
             }
 
             @Override

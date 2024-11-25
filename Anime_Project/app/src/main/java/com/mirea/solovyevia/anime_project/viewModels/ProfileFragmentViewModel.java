@@ -11,7 +11,7 @@ import com.mirea.solovyevia.domain.models.User;
 import com.mirea.solovyevia.domain.usecases.GetActiveUserIdUseCase;
 import com.mirea.solovyevia.domain.usecases.GetUserInfoUseCase;
 
-public class ProfileActivityViewModel extends ViewModel {
+public class ProfileFragmentViewModel extends ViewModel {
 
     private MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
@@ -26,7 +26,7 @@ public class ProfileActivityViewModel extends ViewModel {
         userLiveData.setValue(user);
     }
 
-    public ProfileActivityViewModel() {
+    public ProfileFragmentViewModel() {
         AuthController authController = new FirebaseAuthController();
         AuthRepositoryImpl authRepository = new AuthRepositoryImpl(authController);
 

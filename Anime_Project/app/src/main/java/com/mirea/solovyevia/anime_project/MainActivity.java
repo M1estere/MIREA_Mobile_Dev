@@ -1,56 +1,57 @@
 package com.mirea.solovyevia.anime_project;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
-import com.mirea.solovyevia.anime_project.recyclers.TopAnimeRecyclerAdapter;
-import com.mirea.solovyevia.anime_project.viewModels.AuthActivityViewModel;
-import com.mirea.solovyevia.anime_project.viewModels.AuthActivityViewModelFactory;
-import com.mirea.solovyevia.anime_project.viewModels.MainActivityViewModel;
-import com.mirea.solovyevia.anime_project.viewModels.MainActivityViewModelFactory;
-import com.mirea.solovyevia.domain.models.Anime;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mirea.solovyevia.anime_project.fragments.AnimeListsFragment;
+import com.mirea.solovyevia.anime_project.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainActivityViewModel viewModel;
-
-    private RecyclerView topAnimeRecyclerView;
-    private TopAnimeRecyclerAdapter topAnimeRecyclerAdapter;
-    private List<Anime> topAnimeList;
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewModel = new ViewModelProvider(this, new MainActivityViewModelFactory(this))
-                .get(MainActivityViewModel.class);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        topAnimeRecyclerView = findViewById(R.id.top_anime_recycler);
-        topAnimeRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        topAnimeList = new ArrayList<>();
-        topAnimeRecyclerAdapter = new TopAnimeRecyclerAdapter(topAnimeList);
-        topAnimeRecyclerView.setAdapter(topAnimeRecyclerAdapter);
-
-        viewModel.getAnimeLiveData().observe(this, anime -> {
-            setupTopAnimeDisplay(anime);
-        });
-        viewModel.getTopAnime();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new AnimeListsFragment())
+                    .commit();
+        }
     }
 
-    private void setupTopAnimeDisplay(List<Anime> animeList) {
-        topAnimeList.clear();
-        topAnimeList.addAll(animeList);
-        topAnimeRecyclerAdapter.notifyDataSetChanged();
-    }
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
 
+            switch (item.getItemId()) {
+                case R.id.nav_list:
+                    selectedFragment = new AnimeListsFragment();
+                    break;
+                case R.id.nav_profile:
+                    selectedFragment = new ProfileFragment();
+                    break;
+            }
+
+            if (selectedFragment != null) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, selectedFragment)
+                        .commit();
+            }
+
+            return true;
+        }
+    };
 }
