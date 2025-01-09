@@ -1,5 +1,6 @@
 package com.mirea.solovyevia.anime_project.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mirea.solovyevia.anime_project.AuthActivity;
+import com.mirea.solovyevia.anime_project.MainActivity;
 import com.mirea.solovyevia.anime_project.R;
 import com.mirea.solovyevia.anime_project.viewModels.ProfileFragmentViewModel;
 import com.mirea.solovyevia.domain.UserCallback;
@@ -87,6 +90,14 @@ public class ProfileFragment extends Fragment {
 
         usernameText = view.findViewById(R.id.username_text);
         regDateText = view.findViewById(R.id.authdate_text);
+
+        view.findViewById(R.id.sign_out_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewModel.signOut();
+                startActivity(new Intent(getActivity(), AuthActivity.class));
+            }
+        });
 
         changeVisibility(ActiveScreen.loading);
         viewModel.getUserInfo(new UserCallback() {

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,7 +61,7 @@ public class AnimeListsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         topAnimeRecyclerView = view.findViewById(R.id.top_anime_recycler);
-        topAnimeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        topAnimeRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false));
 
         topAnimeList = new ArrayList<>();
         topAnimeRecyclerAdapter = new TopAnimeRecyclerAdapter(topAnimeList);
